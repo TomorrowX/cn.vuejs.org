@@ -45,15 +45,24 @@ order: 7
 你可以使用 `v-else` 指令来表示 `v-if` 的“else 块”：
 
 ``` html
-<div v-if="Math.random() > 0.5">
-  Now you see me
+<div id="app">
+  <div v-if="Math.random() > 0.5">
+    Now you see me
+  </div>
+  <div v-else>
+    Now you don't
+  </div>
 </div>
-<div v-else>
-  Now you don't
-</div>
+
+<script>
+  new Vue({
+      el: '#app3'
+  })
+</script>
 ```
 
-`v-else` 元素必须紧跟在带 `v-if` 或者 `v-else-if` 的元素的后面，否则它将不会被识别。
+`v-else` 元素必须紧跟在带 `v-if` 或者 `v-else-if` 的元素的后面，否则它将不会被识别。条件语句需要包含在一个Vue对象中才会生效。
+
 
 ### `v-else-if`
 
